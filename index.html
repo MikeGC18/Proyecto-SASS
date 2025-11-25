@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-
+    <title>Historia de la Computación</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    
+
+<body class="light">
+    <header>
+        <h1>Historia de los Ordenadores</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="articulo.html">Artículo</a>
+        </nav>
+        <button id="toggle-theme">Cambiar tema</button>
+    </header>
+
+    <div class="main-content">
+        <div class="articles">
+            <article>
+                <h2>Los Primeros Ordenadores (1940-1950)</h2>
+                <p>Los primeros ordenadores electrónicos surgieron durante la Segunda Guerra Mundial...</p>
+                <a href="articulo.html">Leer más</a>
+            </article>
+
+            <article>
+                <h2>La Era de los Microordenadores (1970-1980)</h2>
+                <p>Con la aparición del microprocesador, llegaron los primeros ordenadores personales...</p>
+                <a href="articulo2.html">Leer más</a>
+            </article>
+
+            <article>
+                <h2>La Computación Moderna y el Internet (1990-2000)</h2>
+                <p>El auge de Internet y los sistemas operativos modernos transformaron la informática...</p>
+                <a href="articulo.html">Leer más</a>
+            </article>
+        </div>
+
+        <aside class="sidebar">
+            <h3>Temas relacionados</h3>
+            <ul>
+                <li>Consolas clásicas</li>
+                <li>Lenguajes de programación antiguos</li>
+                <li>Software retro</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Blog de Computación Retro &copy; 2025</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('toggle-theme');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
+        });
+    </script>
 </body>
+
 </html>

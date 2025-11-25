@@ -1,0 +1,134 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+
+    &.light {
+        background-color: $light-bg;
+        color: $light-text;
+    }
+
+    &.dark {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+}
+
+header {
+    background-color: $primary-color;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px dashed $accent-color;
+
+    nav a {
+        color: black;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+#toggle-theme {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: $accent-color;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $primary-color;
+        color: black;
+    }
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+
+    .articles {
+        flex: 3;
+
+        article {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 2px solid $border-color;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.05);
+
+            h2 {
+                color: $accent-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            img {
+                max-width: 100%;
+                border: 2px solid $border-color;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 10px;
+                color: $primary-color;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .sidebar {
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border: 2px solid $border-color;
+        border-radius: 8px;
+
+        h3 {
+            color: $accent-color;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+
+            li a {
+                color: $primary-color;
+                text-decoration: none;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: $primary-color;
+    color: black;
+    border-top: 3px dashed $accent-color;
+    margin-top: 20px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículo - Historia de los Ordenadores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="light">
+    <header>
+        <h1>Historia de los Ordenadores</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+        <button id="toggle-theme">Cambiar tema</button>
+    </header>
+
+    <main class="main-content">
+        <article>
+            <h2>Los Primeros Ordenadores (1940-1950)</h2>
+            <p>El ENIAC, UNIVAC y otros ordenadores marcaron el inicio de la informática moderna...</p>
+            <img src="images/eniac.jpg" alt="ENIAC">
+            <p>Estos sistemas eran enormes, ocupaban salas enteras y consumían mucha energía...</p>
+        </article>
+
+        <aside class="sidebar">
+            <h3>Artículos relacionados</h3>
+            <ul>
+                <li><a href="index.html">La Era de los Microordenadores</a></li>
+                <li><a href="index.html">La Computación Moderna</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Blog de Computación Retro &copy; 2025</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('toggle-theme');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
+        });
+    </script>
+</body>
+
+</html>
