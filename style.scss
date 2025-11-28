@@ -1,0 +1,307 @@
+// 🎨 Variables simplificadas
+$bgL: #ffffff;
+$bgD: #0a0a0f;
+$txL: #1a1a2e;
+$txD: #e8e8f2;
+$ac: #5a52ff;
+$acS: rgba($ac, 0.15);
+$cdL: #f7f7fc;
+$cdD: rgba(20, 20, 32, 0.6);
+$sh: 0 6px 18px rgba(0, 0, 0, 0.06);
+$rd: 20px;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif
+}
+
+body {
+    background: $bgL;
+    color: $txL;
+    transition: .3s;
+    line-height: 1.7;
+
+    &.dark {
+        background: $bgD;
+        color: $txD
+    }
+}
+
+// 🧠 Header limpio + título centrado
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 8%;
+    margin-bottom: 20px;
+    animation: fD .8s ease;
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        color: #9b97ff;
+        text-align: center; // ← centrar texto
+        position: absolute; // ← lo sacamos del flow flex
+        left: 50%; // ← mitad de pantalla
+        transform: translateX(-50%); // ← compensamos su ancho
+    }
+
+    #toggle-theme {
+        padding: 10px 18px;
+        background: $ac;
+        color: #fff;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .25s;
+
+        &:hover {
+            box-shadow: 0 0 20px $acS, 0 0 40px $acS;
+            transform: translateY(-2px)
+        }
+    }
+
+    .socials a {
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 14px;
+        font-size: .95rem;
+        transition: .3s;
+        color: inherit;
+
+        &:hover {
+            color: $ac
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $ac;
+            border-radius: 2px;
+            transition: .3s
+        }
+
+        &:hover::after {
+            width: 100%
+        }
+    }
+}
+
+.intro {
+    margin: auto;
+    width: 85%;
+    max-width: 900px;
+    padding: 24px 32px;
+    background: $cdL;
+    border-radius: 14px;
+    border-left: 5px solid $ac;
+    box-shadow: $sh;
+    font-size: 1.05rem;
+    animation: fI 1s ease;
+    margin-bottom: 48px;
+
+    body.dark & {
+        background: rgba(30, 30, 45, .4)
+    }
+}
+
+.main-content {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 3.2fr 1fr;
+    gap: 32px;
+    animation: fI 1.2s ease;
+
+    @media(max-width:950px) {
+        grid-template-columns: 1fr
+    }
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+article {
+    background: $cdL;
+    padding: 26px;
+    border-radius: $rd;
+    box-shadow: $sh;
+    border: 1px solid $acS;
+    opacity: 0;
+    animation: fU .9s ease forwards;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 24px $acS, 0 0 60px $acS, $sh
+    }
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.45rem;
+        margin-bottom: 14px;
+        color: inherit
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400
+    }
+
+    .article-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 20px 0;
+
+        img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 14px;
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.02);
+                filter: brightness(1.08)
+            }
+        }
+
+        @media(max-width:600px) {
+            grid-template-columns: 1fr;
+
+            img {
+                height: 180px
+            }
+        }
+    }
+
+    .read-more a {
+        text-decoration: none;
+        background: $ac;
+        padding: 10px 20px;
+        border-radius: 9px;
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 600;
+        transition: .3s;
+
+        &:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 18px $acS, 0 0 42px $acS
+        }
+    }
+
+    body.dark & {
+        background: $cdD;
+        border-color: rgba(255, 255, 255, .06)
+    }
+}
+
+aside.sidebar {
+    background: $cdL;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: $sh;
+    border: 1px dashed $acS;
+    animation: fR .8s ease;
+    height: max-content;
+
+    h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        margin-bottom: 18px
+    }
+
+    a img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        transition: .3s;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px $acS, 0 0 50px $acS
+        }
+    }
+
+    body.dark & {
+        background: rgba(40, 40, 55, .25);
+        border-color: rgba(255, 255, 255, .04)
+    }
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    padding: 26px;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: .7;
+    border-top: 1px solid $acS;
+    animation: fI 1.4s ease;
+
+    body.dark & {
+        border-top-color: rgba(255, 255, 255, .04);
+        opacity: .5
+    }
+}
+
+// 🚀 Keyframes reducidos
+@keyframes fI {
+    from {
+        opacity: 0;
+        transform: translateY(10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fD {
+    from {
+        opacity: 0;
+        transform: translateY(-18px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fU {
+    from {
+        opacity: 0;
+        transform: translateY(18px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fR {
+    from {
+        opacity: 0;
+        transform: translateX(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
