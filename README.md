@@ -54,6 +54,55 @@ Hem triat una paleta que permet visualitzar la pàgina en **dos modes diferents*
 ### Captura de pantalla - Mode Fosc
 ![Mode Fosc](imagenes/Modooscuro.png)
 
+### Com funciona el canvi de mode clar/fosc
+
+El sistema de mode clar/fosc s'implementa mitjançant una combinació de **JavaScript**, **HTML** i **SASS**:
+
+#### 1. Estructura HTML
+```html
+<body class="light">
+    <button id="toggle-theme">Cambiar tema</button>
+</body>
+```
+
+El `<body>` comença amb la classe `light` per defecte, i té un botó per canviar el tema.
+
+#### 2. JavaScript per canviar les classes
+```javascript
+const btn = document.getElementById('toggle-theme');
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
+});
+```
+
+Quan es fa clic al botó, JavaScript alterna entre les classes `dark` i `light` al body.
+
+#### 3. Estils SASS amb variables
+```scss
+$bgL: #ffffff;  // Color fons mode clar
+$bgD: #0a0a0f;  // Color fons mode fosc
+
+body {
+    background: $bgL;
+    color: $txL;
+    transition: .3s;
+    
+    &.dark {
+        background: $bgD;
+        color: $txD;
+    }
+}
+```
+
+SASS utilitza el selector `&.dark` per aplicar els estils foscos quan el body té la classe `dark`. La propietat `transition: .3s` fa que el canvi sigui suau i animat.
+
+#### Avantatges d'aquesta implementació:
+- **Variables centralizades**: Només cal canviar els valors de les variables per modificar tots els colors
+- **Transicions suaus**: L'experiència de l'usuari és fluida gràcies a les transicions CSS
+- **Codi net**: L'ús de `&.dark` en SASS fa el codi més llegible i mantenible
+- **Fàcil extensió**: Es poden afegir més elements amb colors diferents només afegint regles dins de `&.dark`
+
 ## Disseny de la pàgina principal
 
 La pàgina principal (`index.html`) conté una estructura ben organitzada que mostra tots els articles de manera visual i atractiva.
