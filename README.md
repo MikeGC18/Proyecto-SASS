@@ -7,7 +7,6 @@ Per això, primer de tot, entre els membres del grup vam escollir les diferents 
 - [Descripció del projecte](#descripció-del-projecte)
 - [Paleta de colors](#paleta-de-colors)
 - [Disseny de la pàgina principal](#disseny-de-la-pàgina-principal)
-- [Disseny de les pàgines d'article](#disseny-de-les-pàgines-darticle)
 - [Variables SASS](#variables-sass)
 - [Estructura del projecte](#estructura-del-projecte)
 - [Característiques SASS implementades](#característiques-sass-implementades)
@@ -84,12 +83,6 @@ Cada article individual té el seu propi disseny optimitzat per a la lectura de 
 - **Contingut estructurat**: Títols, paràgrafs i imatges il·lustratives
 - **Tipografia llegible**: Mides de font optimitzades per a lectura
 - **Espaiat generos**: Per facilitar la lectura i comprensió
-
-### Exemple de pàgina d'article
-![Pàgina Article](imagenes/paginaarticulo.png)
-
-### Detall del contingut de l'article
-![Contingut Article](imagenes/contenidoarticulo.png)
 
 ## Variables SASS
 
@@ -208,5 +201,3 @@ Cada article explora una època clau en la història de la computació:
 
 ---
 
-**Autors**: Aaron i Mike  
-**Repositori**: [MikeGC18/Proyecto-SASS](https://github.com/MikeGC18/Proyecto-SASS)
