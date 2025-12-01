@@ -1,4 +1,3 @@
-// 🎨 Variables simplificadas
 $bgL: #ffffff;
 $bgD: #0a0a0f;
 $txL: #1a1a2e;
@@ -31,7 +30,6 @@ body {
     }
 }
 
-// 🧠 Header limpio + título centrado
 header {
     display: flex;
     justify-content: space-between;
@@ -44,10 +42,10 @@ header {
         font-family: 'Playfair Display', serif;
         font-size: 2.2rem;
         color: #9b97ff;
-        text-align: center; // ← centrar texto
-        position: absolute; // ← lo sacamos del flow flex
-        left: 50%; // ← mitad de pantalla
-        transform: translateX(-50%); // ← compensamos su ancho
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     #toggle-theme {
@@ -257,7 +255,6 @@ footer {
     }
 }
 
-// 🚀 Keyframes reducidos
 @keyframes fI {
     from {
         opacity: 0;
